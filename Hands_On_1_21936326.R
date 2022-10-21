@@ -31,11 +31,14 @@ df %<>% mutate(happy = fct_rev(happy))#Magrittr
 
 
 # OUTCOME VARIABLES: HAPPINESS --------------------------------------------
-
 df %>% ggplot()+geom_bar(aes(happy, fill=happy))+
   theme(axis.title.x = element_blank(), legend.position = "none") #plot
 
+#Frecuencies for happy
 
+
+# HAPPINESS AND GENDER ----------------------------------------------------
+df %>% ggplot(aes(sex, fill = happy))+geom_bar(position = "fill")
 
 
 
