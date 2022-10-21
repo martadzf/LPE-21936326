@@ -10,7 +10,7 @@ browseURL("https://github.com/martadzf/LPE21936326")
 
 
 if (!require("pacman")) install.packages(("pacman"))
-pacman::p_load(pacman, magrittr, productplots, psych, RColorBrewer, tidyverse)
+pacman::p_load(pacman, magrittr, productplots, psych, RColorBrewer, tidyverse, dplyr)
 #pacman = load and unload
 #magrittr = bidirectional piping
 #productplots = grphincs and cat var
@@ -35,7 +35,9 @@ df %>% ggplot()+geom_bar(aes(happy, fill=happy))+
   theme(axis.title.x = element_blank(), legend.position = "none") #plot
 
 #Frecuencies for happy
-
+df %>% count(happy)
+df %<>% select(happy:health) %>% view()#Me quedo solo con ese rango de columnas
+df %<>% filter(!is.na(happy))#Elimino nulos
 
 # HAPPINESS AND GENDER ----------------------------------------------------
 df %>% ggplot(aes(sex, fill = happy))+geom_bar(position = "fill")
