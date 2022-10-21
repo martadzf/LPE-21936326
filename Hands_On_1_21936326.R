@@ -49,6 +49,10 @@ df %>% ggplot(aes(marital, fill = happy))+geom_bar(position = "fill")
 
 df %>% ggplot(aes(health, fill = happy))+geom_bar(position = "fill")
 
+# DICHOTOMUS MARRIED / NOT VARIABLE ---------------------------------------
+
+df %<>% mutate(married = if_else(marital == "married", "yes", "no")) %>%
+  mutate(married = as_factor(married)) %>% view()
 
 
 
