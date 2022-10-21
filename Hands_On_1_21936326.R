@@ -42,9 +42,12 @@ df %<>% filter(!is.na(happy))#Elimino nulos
 # HAPPINESS AND GENDER ----------------------------------------------------
 df %>% ggplot(aes(sex, fill = happy))+geom_bar(position = "fill")
 
-
 # HAPPINESS AND MARITAL STATUS --------------------------------------------
 df %>% ggplot(aes(marital, fill = happy))+geom_bar(position = "fill")
+
+# HAPPINESS AND HEALTH ----------------------------------------------------
+
+df %>% ggplot(aes(health, fill = happy))+geom_bar(position = "fill")
 
 
 
