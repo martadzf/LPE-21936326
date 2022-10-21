@@ -21,4 +21,23 @@ pacman::p_load(pacman, magrittr, productplots, psych, RColorBrewer, tidyverse)
 # LOAD AND PREPARE DATA ---------------------------------------------------
 
 browseURL("http://j.mp/37Wxvv7")
-df <- happy %>% as_tibble()
+tipo <- happy
+df <- happy %>% as_tibble() #dataframe vitaminado
+
+#Check happy levels
+levels(df$happy)
+#Reverser levels
+df %<>% mutate(happy = fct_rev(happy))#Magrittr
+
+
+
+
+
+
+
+
+
+
+
+
+
