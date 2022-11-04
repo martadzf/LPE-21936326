@@ -26,3 +26,23 @@ locale()
 df1<-df_source %>% janitor::clean_names() %>% type_convert(locale = locale(decimal_mark = ","))
 
 # CREATING NEW COLUMN ------------------------------------------------------------
+
+prueba<-df1 %>% tidyr::extract(rotulo, c("rotulo1", "rotulo2"), "(.*) (.*)" ,remove = F) #Expresión regular
+prueba %>% mutate(prueba, franquicia = ifelse(rotulo1 == "NA",FALSE,TRUE))
+
+# El criterio seguido ha sido que si hay más de una palabra se trata de una franquicia. Por tanto
+# las instancia con TRUE en la columna franquicia se consideran franquicia, y las nulas se consideran
+#marca
+
+
+       
+# prueba %>% mutate(franquicia =! is.null(fran))
+# df1 %>% tidyr::extract(rotulo, c("rotulo1","rotulo2"), "(.*)\\ (.*)" ,remove = F) #Expresión regular
+
+
+
+
+
+
+
+
