@@ -46,7 +46,6 @@ df %>% ggplot(aes(sex, fill = happy))+geom_bar(position = "fill")
 df %>% ggplot(aes(marital, fill = happy))+geom_bar(position = "fill")
 
 # HAPPINESS AND HEALTH ----------------------------------------------------
-
 df %>% ggplot(aes(health, fill = happy))+geom_bar(position = "fill")
 
 # DICHOTOMUS MARRIED / NOT VARIABLE ---------------------------------------
